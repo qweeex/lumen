@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>КАЛЬКУЛЯТОР РАСЧЕТА ОСВЕЩЕННОСТИ ПОМЕЩЕНИЯ</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+
+
+    <h1>Калькулятор расчета освещенности помещения</h1>
+
+
+    <div class="grid_2">
+
+        <div>
+            <h3>Укажите размеры в метрах</h3>
+
+            <span class="line">
+                <span>Длина помещения X в метрах</span>
+                <input type="text" placeholder="x" id="x" value="6">
+            </span>
+
+            <span class="line">
+                <span>Ширина помещения Y в метрах</span>
+                <input type="text" placeholder="y" id="y" value="4">
+            </span>
+
+
+            <span class="line">
+                <span>Высота потолков Z </span>
+                <input type="text" placeholder="z" id="h" value="2.7">
+            </span>
+
+
+
+            <span class="line">
+                <span>Освещенность N </span>
+                <input type="text" placeholder="n" id="n" value="300">
+            </span>
+
+
+            <span class="line">
+                <span>Количество светильников L </span>
+                <input type="text" placeholder="l" id="l" value="6">
+            </span>
+
+            <span class="line ">
+                <button class="btn" onclick="btn()">РАСЧЕТ</button> <br><br>
+                <a href="standarts.html" class="a">Узнать о стандартах мощности светильников</a>
+            </span>
+
+
+            <div class="result">
+                <span class="block">Площадь помещения: <span id="res-s"></span>м2</span>
+                <span class="block">Необходимая освещенность помещения: <span id="res-o"></span></span>
+                <span class="block">Световой поток одного светильника: <span id="reslampa"></span></span>
+                <hr>
+                <h3>Мощность светильников</h3>
+                <span class="block">
+                    Светодиодные лампы <span id="lampas"></span>
+                    шт. по <span id="kolvovat"></span>
+                    ватт = <span id="vats"></span> ватт
+                </span>
+
+
+                <span class="block">
+                    Люминесцентные лампы <span id="lampas2"></span>
+                    шт. по <span id="kolvovat2"></span>
+                    ватт = <span id="vats2"></span> ватт
+                </span>
+
+
+                <span class="block">
+                    Лампа накаливания <span id="lampas3"></span>
+                    шт. по <span id="kolvovat3"></span>
+                    ватт = <span id="vats3"></span> ватт
+                </span>
+
+            </div>
+
+
+
+        </div>
+
+
+        <div>
+
+            <span class="line lightgray">
+                <span>Ширина комнаты: <span id="desc-w"></span></span>
+                <span>Длина комнаты: <span id="desc-h"></span></span>
+            </span>
+
+            <div id="room" class="room"></div>
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

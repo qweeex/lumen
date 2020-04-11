@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>КАЛЬКУЛЯТОР РАСЧЕТА ОСВЕЩЕННОСТИ ПОМЕЩЕНИЯ</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+<img src="https://lh3.googleusercontent.com/proxy/SqdHtOdh52VMy-g_vHaPbAV4IBd6zd30sQxrkAjoTri5JAU26Bp0PUV4Tkpktx5i5jkQyYdiI4wyYrqCXdPEQJy8TRLLZ7OmWE_hgfQFhmH7651l5chthwu37DAPMNzqiy_0iaA0ih5dSw" alt="">
+
+function check() {
+    alert(x);
+    alert(y);
+    alert(z);
+    alert(n);
+    alert(l);
+}
+
+
+function btn() {
+
+let kvts = 0;
+    let x1 = $('#x').val();;
+    let y1 = $('#y').val();;
+    let h1 = $('#h').val();;
+    let n1 = $('#n').val();;
+    let l1 = $('#l').val();;
+
+    let x = Number(x1);
+    let y = Number(y1);
+    let h = Number(h1);
+    let n = Number(n1);
+    let l = Number(l1);
+
+    let room = document.getElementById("room");
+
+    let widthres = x * 100;
+    let heightres = y * 100;
+    room.style.width = widthres + 'px';
+    room.style.height = heightres + 'px';
+
+
+    $('#desc-w').html(x);
+    $('#desc-h').html(y);
+  
+    s = x * y;
+    let res_o = n * s;
+    $('#res-s').html(s); //площадь
+    $('#res-o').html(res_o); //Необходимая освещенность помещения
+    $('#reslampa').html(res_o/l);
+
+
+
+
+
+
+// ------------------------------------------
+// светодиодная  светодиодная  светодиодная
+
+let k1 = s/((x+y)*h);
+let svet1 = Math.ceil(((n*s*1*1.1)/l*k1)/100);
+
+
+    
+    $('#lampas').html(l);  
+    $('#kolvovat').html(svet1);
+    $('#vats').html(svet1*l);
+// ------------------------------------------   
+
+
+
+
+// ------------------------------------------
+// Люминесцентные лампы Люминесцентные лампы Люминесцентные лампы
+let svet2 = ((n*s*1*1.1)/l*k1)/100;
+
+    $('#lampas2').html(l);
+    $('#kolvovat2').html(Math.ceil(svet2));
+    $('#vats2').html(Math.ceil(svet2)*l);
+// ------------------------------------------   
+
+
+
+
+
+// ------------------------------------------
+//Лампа накаливания  Лампа накаливания  Лампа накаливания
+let svet3 = ((n*s*1.15*1.1)/l*k1);
+
+    $('#lampas3').html(l);
+    $('#kolvovat3').html(Math.ceil(svet3));
+    $('#vats3').html(Math.ceil(svet3)*l);
+
+
+var closestLeft,
+    closestRight,
+    data = [250,400,700,900,1200,1800,2500],
+    number = svet1,
+    current;
+
+
+
+for (var i = 0; i < data.length; i++) {
+
+    current = data[i];
+    if (current < number && (typeof closestLeft === 'undefined' || closestLeft < current)) {
+        closestLeft = current;
+    } else if (current > number && (typeof closestRight === 'undefined' || closestRight > current)) {
+        closestRight = current;
+    }
+}
+
+
+if(closestRight ==  250){
+     kvts = 2 
+}
+if(closestRight == 400){
+     kvts = 4 
+}
+if(closestRight == 700){
+     kvts = 8 
+}
+if(closestRight == 900){
+     kvts = 10 
+}
+if(closestRight == 1200){
+     kvts = 12
+}
+if(closestRight == 1800){
+     kvts = 18 
+}
+if(closestRight == 2500){
+     kvts = 25 
+}
+
+
+
+    
+    $('#lampas3').html(l);  
+
+
+
+}
+
+
+
+
+
+ <a href="index.html" class="a">Вернуться</a>
+
+</body>
+
+</html>
+
+
+
+
+
