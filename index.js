@@ -1,10 +1,3 @@
-function check() {
-    alert(x);
-    alert(y);
-    alert(z);
-    alert(n);
-    alert(l);
-}
 
 
 
@@ -37,7 +30,7 @@ function btn() {
     s = x * y;
     $('#res-s').html(s); //площадь
     $('#res-o').html(higtlight(s, h)); //Необходимая освещенность помещения
-    $('#reslampa').html(higtlight(s, h) / l);
+    $('#reslampa').html(Math.round(higtlight(s, h) / l));
 
 
 
@@ -92,5 +85,5 @@ function higtlight(square, height){
     }
     
     /// 300 это нормативное значение освещенности
-    return 300 * square * k;
+    return Number($('#n').val()) * square * k;
 }
